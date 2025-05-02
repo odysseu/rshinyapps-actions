@@ -1,4 +1,11 @@
 #!/bin/sh
+r_version=${r_version}
+shiny_username=${shiny_username}
+shiny_token=${shiny_token}
+shiny_secret=${shiny_secret}
+app_name=${app_name}
+shiny_app_path=${shiny_app_path}
+
 echo "Authorizing $shiny_username"
 
 Rscript -e "rsconnect::setAccountInfo(name='$shiny_username', token='$shiny_token', secret='$shiny_secret')"
