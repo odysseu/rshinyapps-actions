@@ -17,7 +17,7 @@ inputs:
   app_name:
     description: 'Name of the Shiny app'
     required: true
-  shiny_path:
+  shiny_app_path:
     description: 'Path to the Shiny app directory'
     required: true
 outputs:
@@ -32,4 +32,4 @@ runs:
     - ${{ inputs.shiny_token }}
     - ${{ inputs.shiny_secret }}
     - ${{ inputs.app_name }}
-    - ${{ inputs.app_dir }}
+    - ${{ inputs.shiny_app_path }}

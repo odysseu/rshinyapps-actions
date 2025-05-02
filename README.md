@@ -34,7 +34,7 @@ jobs:
           shiny_token: ${{ secrets.SHINYAPP_TOKEN }}
           shiny_secret: ${{ secrets.SHINYAPP_SECRET }}
           app_name: 'myApp'
-          app_dir: 'path/to/app'
+          shiny_app_path: 'path/to/app'
 
 ```
 
