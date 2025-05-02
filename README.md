@@ -1,7 +1,7 @@
-# rshinyapps-actions
+# R Shiny apps - actions
 
 
-Use this action to deploy your code to [shinyapps.io](https://www.shinyapps.io/).
+Use this github action to deploy your [R shiny application](https://shiny.posit.co/) to [shinyapps.io](https://www.shinyapps.io/).
 
 ## Example usage:
 
