@@ -1,4 +1,4 @@
-name: 'ShinyApps.io deploy'
+name: 'R Shiny Apps deploy'
 description: 'Deploys your shiny application to shinyapps.io'
 inputs:
   r-version:
