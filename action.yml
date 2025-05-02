@@ -1,7 +1,7 @@
 name: 'R Shiny Apps deploy'
 description: 'Deploys your shiny application to shinyapps.io'
 inputs:
-  r-version:
+  r_version:
     description: 'R version to use for the application'
     required: true
     default: '4.0.3'
@@ -26,8 +26,8 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  env:
-    - ${{ inputs.r-version }}
+  args:
+    - ${{ inputs.r_version }}
     - ${{ inputs.shiny_username }}
     - ${{ inputs.shiny_token }}
     - ${{ inputs.shiny_secret }}

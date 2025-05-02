@@ -27,9 +27,9 @@ jobs:
           fetch-depth: 0
 
       - name: Deploy app to ShinyApps.io
-        uses: odysseu/rshinyapps-actions@v1
+        uses: odysseu/rshinyapps-actions@v3
         with:
-          r-version: '4.0.3'  # Specify the desired R version
+          r_version: '4.4.3'  # Specify the desired R version
           shiny_username: ${{ secrets.shiny_username }}
           shiny_token: ${{ secrets.SHINYAPP_TOKEN }}
           shiny_secret: ${{ secrets.SHINYAPP_SECRET }}

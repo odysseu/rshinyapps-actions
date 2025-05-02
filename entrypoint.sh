@@ -1,15 +1,24 @@
 #!/bin/sh
 set -e
 
-echo "Authorizing $shiny_username"
+# Use the environment variables defined in the Dockerfile
+SHINY_USERNAME=${SHINY_USERNAME}
+SHINY_TOKEN=${SHINY_TOKEN}
+SHINY_SECRET=${SHINY_SECRET}
+APP_NAME=${APP_NAME}
+APP_DIR=${APP_DIR}
+R_VERSION=${R_VERSION}
 
-Rscript -e "rsconnect::setAccountInfo(name='$shiny_username', token='$shiny_token', secret='$shiny_secret')"
+echo "Authorizing $SHINY_USERNAME"
 
-echo "Deploying $app_name from $shiny_path to shinyapp.io"
+Rscript -e "rsconnect::setAccountInfo(name='$SHINY_USERNAME', token='$SHINY_TOKEN', secret='$SHINY_SECRET')"
 
-app_path="$GITHUB_WORKSPACE/$app_dir"
+echo "Deploying $APP_NAME from $APP_DIR to shinyapps.io; it will be running under R $R_VERSION"
 
-Rscript -e "rsconnect::deployApp(appDir='$app_path', appName='$app_name', launch.browser=FALSE)"
+# Ensure the app_path is correctly set
+app_path="$APP_DIR"
 
-url="https://$shiny_username.shinyapps.io/$app_name/"
+Rscript -e "rsconnect::deployApp(appDir='$app_path', appName='$APP_NAME', launch.browser=FALSE)"
+
+url="https://$SHINY_USERNAME.shinyapps.io/$APP_NAME/"
 echo "::set-output name=url::$url"
