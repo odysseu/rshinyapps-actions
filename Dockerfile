@@ -1,4 +1,4 @@
-ARG r_version="4.4.3"
+ARG r_version="4.5.0"
 FROM r-base:${r_version}
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
