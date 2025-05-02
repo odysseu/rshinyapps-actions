@@ -4,7 +4,7 @@ inputs:
   r_version:
     description: 'R version to use for the application'
     required: true
-    default: '4.0.3'
+    default: '4.4.3'
   shiny_username:
     description: 'Shinyapps.io username'
     required: true
