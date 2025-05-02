@@ -1,10 +1,11 @@
-# shinyapps-actions
+# rshinyapps-actions
 
-Use this action to easily deploy your code to shinyapps.io.
+
+Use this action to deploy your code to [shinyapps.io](https://www.shinyapps.io/).
 
 ## Example usage:
 
-Go check out the existing [r-base dockerhub versions](https://hub.docker.com/_/r-base/tags) for the R version of your shiny app.
+Go check out the available [r-base dockerhub versions](https://hub.docker.com/_/r-base/tags) for the R version your shiny app will be running under.
 
 Full exemple for a `.github/workflows/deploy.yml`:
 
@@ -25,14 +26,18 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Deploy to ShinyApps.io
-        uses: qwert666/shinyapps-actions@main
+      - name: Deploy app to ShinyApps.io
+        uses: odysseu/rshinyapps-actions@v1
         with:
           r-version: '4.0.3'  # Specify the desired R version
-          SHINY_USERNAME: ${{ secrets.SHINY_USERNAME }}
-          SHINY_TOKEN: ${{ secrets.SHINYAPP_TOKEN }}
-          SHINY_SECRET: ${{ secrets.SHINYAPP_SECRET }}
-          APP_NAME: 'myApp'
-          APP_DIR: 'path/to/app'
+          shiny_username: ${{ secrets.shiny_username }}
+          shiny_token: ${{ secrets.SHINYAPP_TOKEN }}
+          shiny_secret: ${{ secrets.SHINYAPP_SECRET }}
+          app_name: 'myApp'
+          app_dir: 'path/to/app'
 
 ```
+
+## Acknowledgement
+
+- [Inspiration for this work](https://github.com/qwert666/shinyapps-actions)
