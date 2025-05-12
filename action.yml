@@ -1,7 +1,8 @@
 name: 'R Shiny Apps deploy'
 description: 'Deploys your shiny application to shinyapps.io'
-color: 'white'
-icon: 'arrow-right'
+branding:
+  color: 'blue'
+  icon: 'pie-chart'
 inputs:
   r_version:
     description: 'R version to use for the application'
