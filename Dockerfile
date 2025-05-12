@@ -7,12 +7,12 @@ ARG shiny_secret
 ARG app_name
 ARG shiny_app_path
 
-ENV r_version
-ENV shiny_username
-ENV shiny_token
-ENV shiny_secret
-ENV app_name
-ENV shiny_app_path
+ENV r_version=${r_version}
+ENV shiny_username=${shiny_username}
+ENV shiny_token=${shiny_token}
+ENV shiny_secret=${shiny_secret}
+ENV app_name=${app_name}
+ENV shiny_app_path=${shiny_app_path}
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libcurl4-openssl-dev \

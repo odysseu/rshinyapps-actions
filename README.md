@@ -23,19 +23,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
+        
       - name: Deploy app to ShinyApps.io
-        uses: odysseu/rshinyapps-actions@v3
+        id: deploy
+        uses: odysseu/rshinyapps-actions@v1
         with:
           r_version: '4.4.3'  # Specify the desired R version
           shiny_username: ${{ secrets.shiny_username }}
           shiny_token: ${{ secrets.SHINYAPP_TOKEN }}
           shiny_secret: ${{ secrets.SHINYAPP_SECRET }}
           app_name: 'myApp'
-          shiny_app_path: 'path/to/app'
+          shiny_app_path: './path/to/shiny/app'
 
+      - name: Print URL
+        run: echo "The app is deployed at ${{ steps.deploy.outputs.url }}"
 ```
 
 ## Acknowledgement
