@@ -1,4 +1,4 @@
-ARG r_version="4.4.3"
+ARG r_version="4.6.1"
 FROM r-base:${r_version}
 
 ARG shiny_username
